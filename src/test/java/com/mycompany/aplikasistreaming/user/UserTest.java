@@ -25,7 +25,7 @@ public class UserTest {
 
     @Test
     public void testUserLoginFailureWrongPassword() {
-        assertFalse(user.login("testuser", "wrongpassword"));
+        assertFalse(user.login("testuser", "password123"));
     }
 
     @Test
