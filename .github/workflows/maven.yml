@@ -56,4 +56,4 @@ jobs:
     - name: Publish to GitHub Packages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -B deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
+      run: mvn -B deploy -DskipTests
