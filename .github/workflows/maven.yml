@@ -44,4 +44,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=archaniels -Dsonar.projectKey=Archaniels_TUBES-MKEPL
+      run: mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=archaniels -Dsonar.projectKey=Archaniels_TUBES-MKEPL -Dsonar.login=${{ secrets.SONAR_TOKEN }}
