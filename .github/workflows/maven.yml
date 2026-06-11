@@ -40,8 +40,17 @@ jobs:
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@v4
 
-    - name: Analyze with SonarCloud
+    - name: Build with Maven
+      run: mvn -B clean verify
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=archaniels -Dsonar.projectKey=Archaniels_TUBES-MKEPL -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.organization=archaniels
+          -Dsonar.projectKey=Archaniels_TUBES-MKEPL
+          -Dsonar.sources=src/main/java
+          -Dsonar.java.binaries=target/classes
