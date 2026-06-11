@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany</groupId>
-    <artifactId>AplikasiStreaming</artifactId>
+    <groupId>com.github.archaniels</groupId>
+    <artifactId>tubes-mkepl</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <properties>
@@ -19,4 +19,11 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Archaniels/TUBES-MKEPL</url>
+        </repository>
+    </distributionManagement>
 </project>
